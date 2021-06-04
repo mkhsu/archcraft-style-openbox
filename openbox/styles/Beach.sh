@@ -4,6 +4,7 @@
 polybar_path="$HOME/.config/polybar"
 rofi_path="$HOME/.config/rofi"
 terminal_path="$HOME/.config/alacritty"
+xfce_term_path="$HOME/.config/xfce4/terminal"
 geany_path="$HOME/.config/geany"
 openbox_path="$HOME/.config/openbox"
 dunst_path="$HOME/.config/dunst"
@@ -83,6 +84,15 @@ change_term() {
 		    cyan:    '0x33c5ba'
 		    white:   '0xfdf6e3'
 	_EOF_
+}
+
+# xfce terminal ---------------------------------
+change_xfterm () {
+	sed -i -e "s/FontName=.*/FontName=$1/g" "$xfce_term_path"/terminalrc
+	sed -i -e 's/ColorForeground=.*/ColorForeground=#9393a1a1a1a1/g' "$xfce_term_path"/terminalrc
+	sed -i -e 's/ColorBackground=.*/ColorBackground=#14141c1c2121/g' "$xfce_term_path"/terminalrc
+	sed -i -e 's/ColorCursor=.*/ColorCursor=#9393a1a1a1a1/g' "$xfce_term_path"/terminalrc
+	sed -i -e 's/ColorPalette=.*/ColorPalette=#262636364040;#d1d12f2f2c2c;#818194940000;#b0b085850000;#25258787cccc;#69696e6ebfbf;#28289c9c9393;#bfbfbabaacac;#4a4a69697d7d;#fafa39393535;#a4a4bdbd0000;#d9d9a4a40000;#2c2ca2a2f5f5;#80808686e8e8;#3333c5c5baba;#fdfdf6f6e3e3/g' "$xfce_term_path"/terminalrc
 }
 
 # geany ---------------------------------
@@ -238,6 +248,9 @@ change_nm 'beach'																	# CONFIG FILE DIR
 
 ## Change colors in funct (TERMINAL)
 change_term 'Iosevka Custom' '9'													# FONT | SIZE
+
+## Change colors in funct (xfce4-terminal)
+change_xfterm 'Iosevka Custom 9'													# FONT
 
 change_geany 'github' 'Iosevka Custom 10'											# SCHEME | FONT
 

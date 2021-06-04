@@ -394,7 +394,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>alacritty</command>
+        <command>alacritty --config-file ~/.config/alacritty/fullscreen.yml</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -449,7 +449,7 @@
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>alacritty --config-file ~/.config/alacritty/fullscreen.yml</command>
+        <command>xfce4-terminal</command>
       </action>
     </keybind>
     <keybind key="C-A-v">
