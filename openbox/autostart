@@ -4,9 +4,6 @@ nitrogen --restore
 ## xfce4-settings daemon
 xfsettingsd &
 
-## polkit agent
-/usr/lib/xfce-polkit/xfce-polkit &
-
 ## Start Compositing Manager
 exec compton &
 
